@@ -2,7 +2,7 @@ package core.basesyntax.service;
 
 import java.util.Map;
 
-public class CsvParseServiceImpl implements ReportCreator {
+public class CsvReportCreatorImpl implements ReportCreator {
     private static final String HEADER = "fruit,quantity";
     private static final String SEPARATOR = ",";
 

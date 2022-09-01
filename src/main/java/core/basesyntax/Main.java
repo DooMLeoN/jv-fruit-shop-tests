@@ -4,9 +4,9 @@ import core.basesyntax.dao.FruitDao;
 import core.basesyntax.dao.FruitDaoImpl;
 import core.basesyntax.model.FruitTransaction;
 import core.basesyntax.service.ParseService;
-import core.basesyntax.service.ParseServiceImpl;
+import core.basesyntax.service.CsvParseServiceImpl;
 import core.basesyntax.service.ReportCreator;
-import core.basesyntax.service.ReportCreatorImpl;
+import core.basesyntax.service.CsvReportCreatorImpl;
 import core.basesyntax.service.io.FileReader;
 import core.basesyntax.service.io.FileReaderImpl;
 import core.basesyntax.service.io.FileWriter;
@@ -40,7 +40,7 @@ public class Main {
         Strategy strategy = new StrategyImpl(operationMap);
         FileReader reader = new FileReaderImpl();
         List<String> list = reader.readeFromFile(PATH_TO_INPUT_FILE);
-        ParseService collectData = new ParseServiceImpl();
+        ParseService collectData = new CsvParseServiceImpl();
 
         for (String data : list.subList(1, list.size())) {
             FruitTransaction fruitTransaction = collectData.parse(data);
@@ -50,7 +50,7 @@ public class Main {
 
         Map<String, Integer> storageMap = fruitDao.getAll();
         System.out.println(storageMap);
-        ReportCreator generateReport = new ReportCreatorImpl();
+        ReportCreator generateReport = new CsvReportCreatorImpl();
         String report = generateReport.create(storageMap);
         FileWriter fileWriter = new FileWriterImpl();
         fileWriter.writeToFile(PATH_TO_REPORT_FILE, report);

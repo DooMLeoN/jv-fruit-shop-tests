@@ -12,7 +12,7 @@ public class ReportCreatorImplTest {
 
     @BeforeClass
     public static void setUp() {
-        reportCreator = new ReportCreatorImpl();
+        reportCreator = new CsvReportCreatorImpl();
     }
 
     @Test

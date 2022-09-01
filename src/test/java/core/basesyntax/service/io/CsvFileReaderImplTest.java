@@ -8,9 +8,9 @@ import java.util.List;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class FileReaderImplTest {
+public class CsvFileReaderImplTest {
     private static final String PATH_TO_TEST_INPUT_FILE = "src/resourcesTest/operationsTest.csv";
-    private static final String PATH_TO_NOT_EXIST_TEST_INPUT_FILE = "src/resourcesTest/???.csv";
+    private static final String PATH_TO_NOT_EXIST_TEST_INPUT_FILE = "src/resourcesTest/a???.csv";
     private static FileReader fileReader;
 
     @BeforeClass

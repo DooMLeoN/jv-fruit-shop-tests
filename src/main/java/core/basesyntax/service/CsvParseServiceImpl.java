@@ -2,7 +2,7 @@ package core.basesyntax.service;
 
 import core.basesyntax.model.FruitTransaction;
 
-public class ParseServiceImpl implements ParseService {
+public class CsvParseServiceImpl implements ParseService {
     private static final String SEPARATOR = ",";
     private static final int OPERATION_INDEX = 0;
     private static final int FRUIT_INDEX = 1;

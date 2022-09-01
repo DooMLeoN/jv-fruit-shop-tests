@@ -12,7 +12,7 @@ public class ParseServiceImplTest {
 
     @Test
     public void parse_Ok() {
-        ParseService parseService = new ParseServiceImpl();
+        ParseService parseService = new CsvParseServiceImpl();
         FruitTransaction expected = new FruitTransaction();
         expected.setOperation(FruitTransaction.Operation
                 .SUPPLY);
@@ -24,7 +24,7 @@ public class ParseServiceImplTest {
 
     @Test
     public void parse_NotValidData_NotOk() {
-        ParseService parseService = new ParseServiceImpl();
+        ParseService parseService = new CsvParseServiceImpl();
         assertThrows(RuntimeException.class,() ->
                 parseService.parse(NOT_VALID_TEST_DATA));
     }
